@@ -2,70 +2,109 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#140b06">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#1a0c05">
   <meta name="description" content="TOOFLESS — No teeth. No utility. Just TOOF.">
   <title>TOOFLESS — $TOOF</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-v4.css?v=4">
 </head>
 <body>
-  <main>
-    <header class="hero">
-      <nav class="nav shell">
-        <a class="brand" href="#top">TOOFLESS</a>
-        <a class="social" href="https://x.com/Toof_On_Sol" target="_blank" rel="noreferrer">@Toof_On_Sol ↗</a>
-      </nav>
+  <header class="hero" id="top">
+    <div class="sky-glow"></div>
+    <div class="sun" aria-hidden="true"></div>
 
-      <section id="top" class="hero-grid shell">
-        <div class="hero-art">
-          <div class="burst" aria-hidden="true"></div>
-          <img src="toofless-master.png" alt="TOOFLESS mascot">
-        </div>
+    <div class="mesa mesa-a" aria-hidden="true"></div>
+    <div class="mesa mesa-b" aria-hidden="true"></div>
+    <div class="mesa mesa-c" aria-hidden="true"></div>
 
-        <div class="hero-copy">
-          <div class="eyebrow">$TOOF • SOLANA</div>
-          <h1>NO TEETH.<br>NO UTILITY.<br><span>JUST TOOF.</span></h1>
-          <p class="tagline">CAN’T BITE. CAN PUMP.</p>
+    <div class="cactus cactus-a" aria-hidden="true"></div>
+    <div class="cactus cactus-b" aria-hidden="true"></div>
+    <div class="cactus cactus-c" aria-hidden="true"></div>
 
-          <div class="cta-stack">
-            <button class="buy" disabled>BUY $TOOF — NOT MINTED YET</button>
-            <a class="xbtn" href="https://x.com/Toof_On_Sol" target="_blank" rel="noreferrer">FOLLOW @Toof_On_Sol</a>
-          </div>
+    <div class="dust dust-a" aria-hidden="true"></div>
+    <div class="dust dust-b" aria-hidden="true"></div>
 
-          <div class="trust-note">
-            Official contract address will appear here after launch. Ignore random links and fake CAs.
-          </div>
-        </div>
-      </section>
-
-      <div class="ticker">
-        <div>NO TEETH • NO UTILITY • JUST TOOF • CAN’T BITE • CAN PUMP • NO TEETH • NO UTILITY • JUST TOOF •</div>
+    <nav class="nav shell">
+      <a class="brand" href="#top">TOOFLESS</a>
+      <div class="nav-right">
+        <a href="#lore">LORE</a>
+        <a href="#roadmap">ROADMAP</a>
+        <a href="https://x.com/Toof_On_Sol" target="_blank" rel="noreferrer">@Toof_On_Sol ↗</a>
       </div>
-    </header>
+    </nav>
 
-    <section class="section shell" id="lore">
-      <div class="kicker">THE BITE THAT CHANGED NOTHING</div>
-      <h2>He tried to bite the blockchain.</h2>
+    <section class="hero-grid shell">
+      <div class="mascot-stage">
+        <div class="dance-shadow" aria-hidden="true"></div>
+        <img
+          class="toof-dance"
+          src="toofless-dance.png"
+          alt="TOOFLESS dancing in cowboy boots"
+        >
+        <div class="floating-tooth" aria-hidden="true">🦷</div>
+        <button class="pause-dance" type="button" aria-pressed="false">PAUSE DANCE</button>
+      </div>
 
-      <div class="story">
+      <div class="hero-copy">
+        <p class="eyebrow">$TOOF • SOLANA</p>
+        <h1>
+          NO TEETH.<br>
+          NO UTILITY.<br>
+          <span>JUST TOOF.</span>
+        </h1>
+
+        <p class="tagline">CAN’T BITE. CAN PUMP.</p>
+
+        <div class="actions">
+          <button class="buy" disabled>BUY $TOOF — NOT MINTED YET</button>
+          <a class="follow" href="https://x.com/Toof_On_Sol" target="_blank" rel="noreferrer">
+            FOLLOW @Toof_On_Sol
+          </a>
+        </div>
+
+        <div class="contract-card">
+          <span>OFFICIAL CONTRACT</span>
+          <strong>NOT LIVE YET</strong>
+          <p>When $TOOF launches, the verified contract address and Pump.fun link will appear here.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div>
+        NO TEETH • NO UTILITY • JUST TOOF • CAN’T BITE • CAN PUMP •
+        NO TEETH • NO UTILITY • JUST TOOF • CAN’T BITE • CAN PUMP •
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section lore shell" id="lore">
+      <p class="kicker">THE BITE THAT CHANGED NOTHING</p>
+      <h2>TOOF tried to bite the blockchain.</h2>
+
+      <div class="story-grid">
         <article>
           <span>01</span>
           <h3>SAW THE CHAIN</h3>
           <p>Bright. Shiny. Decentralized. Completely inedible.</p>
         </article>
+
         <article>
           <span>02</span>
           <h3>BIT IT ANYWAY</h3>
           <p>The blockchain stayed intact. TOOF did not.</p>
         </article>
+
         <article>
           <span>03</span>
           <h3>LOST A TOOTH</h3>
           <p>He stared at it for three seconds and called the event bullish.</p>
         </article>
+
         <article>
           <span>04</span>
           <h3>$TOOF WAS BORN</h3>
@@ -74,37 +113,70 @@
       </div>
     </section>
 
-    <section class="quote-wrap">
-      <div class="quote shell">
-        <div class="tooth">🦷</div>
+    <section class="quote-section shell">
+      <div class="quote-card">
+        <div class="quote-tooth">🦷</div>
         <blockquote>“Checked the chart. Couldn’t read it. Bullish.”</blockquote>
         <p>— TOOFLESS</p>
       </div>
     </section>
 
-    <section class="section shell" id="roadmap">
-      <div class="kicker">TOTALLY SERIOUS ROADMAP</div>
+    <section class="section roadmap-section shell" id="roadmap">
+      <p class="kicker">TOTALLY SERIOUS ROADMAP</p>
       <h2>Four phases. Zero dentistry.</h2>
+
       <div class="roadmap">
-        <div><b>PHASE 1</b><span>LOSE TOOTH</span></div>
-        <div><b>PHASE 2</b><span>FIND LIQUIDITY</span></div>
-        <div><b>PHASE 3</b><span>BITE BLOCKCHAIN AGAIN</span></div>
-        <div><b>PHASE 4</b><span>MOON SOMEHOW</span></div>
+        <div>
+          <small>PHASE 1</small>
+          <strong>LOSE TOOTH</strong>
+        </div>
+        <div>
+          <small>PHASE 2</small>
+          <strong>FIND LIQUIDITY</strong>
+        </div>
+        <div>
+          <small>PHASE 3</small>
+          <strong>BITE BLOCKCHAIN AGAIN</strong>
+        </div>
+        <div>
+          <small>PHASE 4</small>
+          <strong>MOON SOMEHOW</strong>
+        </div>
       </div>
     </section>
 
-    <section class="section shell legal">
+    <section class="section meme-section shell">
+      <div class="meme-card">
+        <div class="meme-copy">
+          <p class="kicker">OFFICIAL TOOF PHILOSOPHY</p>
+          <h2>ZERO DENTAL PLAN.<br>MAXIMUM CONVICTION.</h2>
+          <p>
+            TOOFLESS has one missing tooth, no roadmap he understands,
+            and absolutely no reason to be this confident.
+          </p>
+        </div>
+        <div class="meme-badge">🦎 + 🦷 = $TOOF</div>
+      </div>
+    </section>
+
+    <section class="legal shell">
       <h2>Important boring bit.</h2>
-      <p>$TOOF is a meme-token concept. Nothing here guarantees returns or price performance. Crypto is risky. Always verify official links and the contract address before interacting.</p>
+      <p>
+        $TOOF is a meme-token concept. Nothing on this site guarantees returns or
+        price performance. Crypto is risky. Verify official links and the contract
+        address before interacting.
+      </p>
     </section>
-
-    <footer>
-      <div class="shell footer-inner">
-        <strong>TOOFLESS</strong>
-        <span>NO TEETH. NO UTILITY. JUST TOOF.</span>
-        <a href="https://x.com/Toof_On_Sol" target="_blank" rel="noreferrer">@Toof_On_Sol</a>
-      </div>
-    </footer>
   </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <strong>TOOFLESS</strong>
+      <span>NO TEETH. NO UTILITY. JUST TOOF.</span>
+      <a href="https://x.com/Toof_On_Sol" target="_blank" rel="noreferrer">@Toof_On_Sol</a>
+    </div>
+  </footer>
+
+  <script src="script-v4.js?v=4"></script>
 </body>
 </html>
