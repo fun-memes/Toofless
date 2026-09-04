@@ -10,15 +10,11 @@ let introFinished = false;
 function finishIntro() {
   if (introFinished) return;
   introFinished = true;
-
-  // Stop video decode immediately on skip/error/end before revealing the heavy page effects.
   try { introVideo?.pause(); } catch (_) {}
   intro?.classList.add('transitioning');
   document.body.classList.add('cursor-active');
-
   setTimeout(() => {
     intro?.remove();
-    // Only start painting/animating the desert world after the intro overlay is gone.
     document.body.classList.remove('intro-playing');
   }, 850);
 }
@@ -28,8 +24,6 @@ if (intro && introVideo) {
   introVideo.addEventListener('ended', finishIntro, { once: true });
   introVideo.addEventListener('error', finishIntro, { once: true });
 
-  // If playback stalls for a long time, keep the skip button usable rather than
-  // letting the page sit behind a frozen frame indefinitely.
   let stallTimer = null;
   const clearStallTimer = () => {
     if (stallTimer) clearTimeout(stallTimer);
@@ -37,9 +31,7 @@ if (intro && introVideo) {
   };
   introVideo.addEventListener('waiting', () => {
     clearStallTimer();
-    stallTimer = setTimeout(() => {
-      skip?.classList.add('show-stall-hint');
-    }, 1800);
+    stallTimer = setTimeout(() => skip?.classList.add('show-stall-hint'), 1800);
   });
   introVideo.addEventListener('playing', () => {
     clearStallTimer();
@@ -141,15 +133,14 @@ window.addEventListener('touchend', () => {
   if (toothCursor && matchMedia('(pointer:coarse)').matches) toothCursor.style.display = 'none';
 }, { passive: true });
 
-// Lore card 04: the previous repository blob was not a valid WebP.
-// Load the verified 3D artwork from a text-safe base64 payload instead.
+// Lore card 04 uses a verified text-safe WebP payload. The placeholder avoids a broken-image flash.
 (async () => {
-  const lore04 = document.querySelector('img[src*="lore-04-3d.webp"]');
+  const lore04 = document.querySelector('img[data-lore04]');
   if (!lore04) return;
   try {
-    const response = await fetch('assets/lore-04-3d.b64?v=1', { cache: 'no-store' });
+    const response = await fetch(lore04.dataset.lore04, { cache: 'no-store' });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const payload = (await response.text()).trim();
+    const payload = (await response.text()).replace(/\s+/g, '');
     if (!payload.startsWith('UklG')) throw new Error('Invalid WebP payload');
     lore04.src = `data:image/webp;base64,${payload}`;
   } catch (error) {
