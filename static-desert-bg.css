@@ -1,0 +1,42 @@
+/* Static TOOFLESS night-desert world */
+html{background:#020612}
+body{position:relative;background:#020612;overflow-x:hidden}
+.site-world{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    linear-gradient(180deg,rgba(2,6,18,.16),rgba(2,7,18,.40) 45%,rgba(1,4,12,.62)),
+    url('assets/static-desert-wide.webp') center center/cover no-repeat;
+  transform:translateZ(0);
+}
+.site-world::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(2,5,15,.38),transparent 24%,transparent 72%,rgba(2,5,15,.30)),
+    linear-gradient(180deg,transparent 0 60%,rgba(2,4,10,.35));
+}
+body>header,body>main,body>footer{position:relative;z-index:2}
+main{background:transparent!important}
+.hero{background:transparent!important}
+.hero::before,.hero::after{opacity:.12!important}
+.desert-layer{display:none!important}
+.chain-river,.chain-block,.chain-caption,.moon-glow,.mesa,.dune,.cactus,.desert-grass{display:none!important}
+.section::before,.quote-section::before,.legal::before{
+  background:linear-gradient(145deg,rgba(3,8,20,.68),rgba(6,12,26,.50))!important;
+  border-color:rgba(43,154,214,.13)!important;
+  backdrop-filter:blur(5px);
+}
+.hero-copy,.cards article,.roadmap-card,.meme-card,.quote-card{backdrop-filter:blur(8px)}
+@media(max-width:700px){
+  .site-world{
+    background:
+      linear-gradient(180deg,rgba(2,6,18,.12),rgba(2,7,18,.32) 46%,rgba(1,4,12,.58)),
+      url('assets/static-desert-mobile.webp') center top/cover no-repeat;
+  }
+  .site-world::after{background:linear-gradient(180deg,rgba(2,4,12,.08),rgba(2,4,12,.18) 48%,rgba(2,4,12,.42))}
+}
+@media(prefers-reduced-motion:reduce){.site-world{transform:none}}
