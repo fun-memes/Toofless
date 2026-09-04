@@ -1,8 +1,7 @@
-/* TOOFLESS seamless desert world — high-visibility full-page background */
+/* TOOFLESS seamless desert world — sharp background test, no frosted glass */
 html{min-height:100%;background:#020612}
 body{position:relative;min-height:100vh;margin:0;overflow-x:hidden;background:#020612!important}
 
-/* Full-screen desert image behind every section. Brightened here so it does not disappear on phones. */
 .site-world{
   position:fixed!important;
   inset:0!important;
@@ -15,21 +14,20 @@ body{position:relative;min-height:100vh;margin:0;overflow-x:hidden;background:#0
   background-position:center center!important;
   background-size:cover!important;
   background-repeat:no-repeat!important;
-  opacity:.98!important;
-  filter:brightness(1.75) saturate(1.35) contrast(1.08)!important;
+  opacity:1!important;
+  filter:brightness(1.85) saturate(1.4) contrast(1.08)!important;
   transform:translateZ(0);
 }
 
-/* Blue blockchain glow + desert warmth added independently so the scene stays obvious even on dark displays. */
 .site-world::before{
   content:"";
   position:absolute;
   inset:0;
   pointer-events:none;
   background:
-    radial-gradient(ellipse at 50% 38%,rgba(0,210,255,.34) 0%,rgba(0,130,255,.14) 26%,transparent 52%),
+    radial-gradient(ellipse at 50% 38%,rgba(0,210,255,.36) 0%,rgba(0,130,255,.14) 26%,transparent 52%),
     radial-gradient(ellipse at 50% 82%,rgba(255,112,30,.18) 0%,transparent 54%),
-    linear-gradient(180deg,rgba(2,6,18,.02) 0%,rgba(2,7,18,.08) 58%,rgba(1,4,12,.18) 100%);
+    linear-gradient(180deg,rgba(2,6,18,.01) 0%,rgba(2,7,18,.05) 58%,rgba(1,4,12,.12) 100%);
 }
 
 .site-world::after{
@@ -37,7 +35,7 @@ body{position:relative;min-height:100vh;margin:0;overflow-x:hidden;background:#0
   position:absolute;
   inset:0;
   pointer-events:none;
-  background:linear-gradient(90deg,rgba(2,5,15,.08),transparent 14%,transparent 86%,rgba(2,5,15,.08));
+  background:linear-gradient(90deg,rgba(2,5,15,.05),transparent 14%,transparent 86%,rgba(2,5,15,.05));
 }
 
 body>header,body>main,body>footer{position:relative!important;z-index:2!important}
@@ -46,33 +44,34 @@ main,.hero,footer,.section,.quote-section,.legal{background:transparent!importan
 .desert-layer{display:none!important}
 .chain-river,.chain-block,.chain-caption,.moon-glow,.mesa,.dune,.cactus,.desert-grass{display:none!important}
 
-/* Panels stay readable but no longer erase the background. */
+/* IMPORTANT: remove frosted glass completely so artwork stays sharp. */
 .hero-copy,.cards article,.roadmap-card,.meme-card,.quote-card{
-  backdrop-filter:blur(5px);
-  -webkit-backdrop-filter:blur(5px);
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
 }
-.cards article,.roadmap-card{background:rgba(8,13,27,.68)!important}
-.meme-card{background:rgba(7,12,24,.64)!important}
-.hero-copy{background:rgba(5,10,22,.58)!important}
-.quote-card{background:rgba(7,12,24,.60)!important}
-.ticker{background:rgba(3,7,17,.66)!important}
-.legal{background:linear-gradient(180deg,rgba(2,6,16,.04),rgba(2,5,13,.22))!important}
-footer{background:linear-gradient(180deg,rgba(2,5,13,.34),rgba(2,5,13,.68))!important}
+.cards article,.roadmap-card{background:rgba(8,13,27,.48)!important}
+.meme-card{background:rgba(7,12,24,.48)!important}
+.hero-copy{background:rgba(5,10,22,.46)!important}
+.quote-card{background:rgba(7,12,24,.48)!important}
+.ticker{background:rgba(3,7,17,.56)!important}
+.legal{background:linear-gradient(180deg,rgba(2,6,16,.02),rgba(2,5,13,.14))!important}
+footer{background:linear-gradient(180deg,rgba(2,5,13,.24),rgba(2,5,13,.54))!important}
 
 @media(max-width:700px){
   .site-world{
     background-image:url('assets/static-desert-mobile.webp')!important;
     background-position:center center!important;
     background-size:cover!important;
-    filter:brightness(2.05) saturate(1.42) contrast(1.05)!important;
+    filter:brightness(2.15) saturate(1.48) contrast(1.04)!important;
   }
   .site-world::before{
     background:
-      radial-gradient(ellipse at 50% 34%,rgba(0,218,255,.38) 0%,rgba(0,125,255,.16) 28%,transparent 54%),
-      radial-gradient(ellipse at 50% 84%,rgba(255,112,30,.22) 0%,transparent 58%),
-      linear-gradient(180deg,rgba(2,6,18,0) 0%,rgba(2,7,18,.05) 62%,rgba(1,4,12,.14) 100%);
+      radial-gradient(ellipse at 50% 34%,rgba(0,218,255,.42) 0%,rgba(0,125,255,.16) 28%,transparent 54%),
+      radial-gradient(ellipse at 50% 84%,rgba(255,112,30,.24) 0%,transparent 58%),
+      linear-gradient(180deg,rgba(2,6,18,0) 0%,rgba(2,7,18,.03) 62%,rgba(1,4,12,.10) 100%);
   }
-  .cards article,.roadmap-card{background:rgba(8,13,27,.64)!important}
-  .hero-copy{background:rgba(5,10,22,.54)!important}
-  .meme-card{background:rgba(7,12,24,.60)!important}
+  .cards article,.roadmap-card{background:rgba(8,13,27,.44)!important}
+  .hero-copy{background:rgba(5,10,22,.42)!important}
+  .meme-card{background:rgba(7,12,24,.44)!important}
+  .quote-card{background:rgba(7,12,24,.44)!important}
 }
