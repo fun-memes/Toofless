@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#120805">
+  <meta name="theme-color" content="#050713">
   <meta name="description" content="TOOFLESS — No teeth. No utility. Just TOOF.">
   <title>TOOFLESS — $TOOF</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,20 +11,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@500;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=5">
   <link rel="stylesheet" href="mobile-fix.css?v=2">
+  <link rel="stylesheet" href="night-theme.css?v=1">
 </head>
 <body>
   <div id="intro" class="intro">
+    <video id="introVideo" class="intro-video" autoplay muted playsinline preload="auto">
+      <source src="toofless-intro-full.mp4" type="video/mp4">
+    </video>
+    <div class="intro-vignette" aria-hidden="true"></div>
     <button id="skipIntro" class="skip-intro" type="button">SKIP</button>
-    <div class="intro-scene">
-      <div class="intro-sun"></div>
-      <img class="intro-toof" src="toofless-dance.png" alt="TOOFLESS">
-      <div class="intro-chain" aria-label="Blockchain">
-        <div class="chain-block">▰</div><div class="chain-link">⛓</div><div class="chain-block">▰</div><div class="chain-link">⛓</div><div class="chain-block">▰</div>
-        <strong>BLOCKCHAIN</strong>
-      </div>
-      <div class="intro-tooth">🦷</div>
-      <div class="intro-bullish">...BULLISH.</div>
-    </div>
   </div>
 
   <div id="toothCursor" class="tooth-cursor" aria-hidden="true">🦷</div>
@@ -109,6 +104,6 @@
   </main>
 
   <footer><div class="shell footer-inner"><strong>TOOFLESS</strong><span>NO TEETH. NO UTILITY. JUST TOOF.</span><a href="https://x.com/Toof_On_Sol" target="_blank" rel="noreferrer">@Toof_On_Sol</a></div></footer>
-  <script src="script.js?v=5"></script>
+  <script src="script.js?v=6"></script>
 </body>
 </html>
