@@ -1,0 +1,128 @@
+:root{
+  --bg:#050713;
+  --panel:#0d1020;
+  --panel2:#11172b;
+  --cream:#fff8e8;
+  --muted:#bdc3d5;
+  --gold:#ffc857;
+  --orange:#ef8700;
+  --blue:#42bfff;
+  --border:#27324d;
+}
+body{background:var(--bg)}
+
+/* Full-screen story intro */
+.intro{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:block;
+  overflow:hidden;
+  background:#02030a;
+  opacity:1;
+  visibility:visible;
+  transition:opacity .8s ease,visibility .8s ease;
+}
+.intro.transitioning,.intro.hide{opacity:0;visibility:hidden;pointer-events:none}
+.intro-video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+  background:#02030a;
+}
+.intro-vignette{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(180deg,rgba(0,0,0,.08),transparent 68%,rgba(3,5,16,.46)),radial-gradient(circle at 50% 45%,transparent 45%,rgba(0,0,0,.28) 100%);
+}
+.skip-intro{
+  position:absolute;
+  z-index:4;
+  right:max(16px,env(safe-area-inset-right));
+  top:max(16px,env(safe-area-inset-top));
+  min-height:44px;
+  padding:10px 16px;
+  border:1px solid rgba(255,255,255,.68);
+  border-radius:999px;
+  background:rgba(3,5,15,.52);
+  backdrop-filter:blur(8px);
+  color:#fff;
+  font-weight:900;
+}
+
+/* Continue the video's night-desert atmosphere into the site */
+.hero{
+  min-height:760px;
+  background:
+    radial-gradient(circle at 16% 26%,rgba(54,170,255,.23) 0 2%,rgba(37,108,190,.11) 11%,transparent 28%),
+    radial-gradient(circle at 74% 18%,rgba(82,114,255,.12),transparent 30%),
+    linear-gradient(180deg,#070a1a 0%,#0b1230 48%,#17233c 68%,#080b16 100%);
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.72;
+  background-image:
+    radial-gradient(circle at 8% 18%,#fff 0 1px,transparent 1.4px),
+    radial-gradient(circle at 21% 9%,#fff 0 1px,transparent 1.4px),
+    radial-gradient(circle at 39% 22%,#fff 0 1px,transparent 1.4px),
+    radial-gradient(circle at 58% 12%,#fff 0 1px,transparent 1.4px),
+    radial-gradient(circle at 78% 24%,#fff 0 1px,transparent 1.4px),
+    radial-gradient(circle at 91% 10%,#fff 0 1px,transparent 1.4px),
+    radial-gradient(circle at 68% 35%,rgba(99,201,255,.9) 0 1px,transparent 1.5px);
+}
+.hero::after{background:linear-gradient(to bottom,transparent,var(--bg))}
+.desert-back{opacity:.58;filter:saturate(.7);background:radial-gradient(circle at 14% 66%,#17233b 0 6%,transparent 6.3%),radial-gradient(circle at 67% 58%,#1a2740 0 7%,transparent 7.3%),linear-gradient(170deg,transparent 0 40%,#16233b 41% 56%,transparent 57%)}
+.desert-mid{opacity:.92;background:linear-gradient(165deg,transparent 0 35%,#111a2c 36% 52%,transparent 53%),linear-gradient(15deg,transparent 0 44%,#0d1525 45% 60%,transparent 61%)}
+.desert-front{background:linear-gradient(#0d1728,#060913);opacity:1}
+.nav{color:var(--cream)}
+.brand,.nav-links{color:#f7e9c9;text-shadow:0 2px 14px rgba(0,0,0,.45)}
+.toof-mascot{filter:drop-shadow(0 28px 24px rgba(0,0,0,.5)) drop-shadow(0 0 28px rgba(63,181,255,.12))}
+.mascot-shadow{background:rgba(0,0,0,.48)}
+.reaction{background:#fff6d5;color:#16101a;border-color:#39304a}
+.hero-copy{background:linear-gradient(135deg,rgba(5,8,22,.91),rgba(11,17,38,.8));border-color:rgba(103,191,255,.22);box-shadow:0 24px 65px rgba(0,0,0,.28),inset 0 0 40px rgba(55,131,255,.025)}
+.eyebrow{color:#7ed4ff}
+h1 span{color:var(--gold)}
+.actions a{background:#060914;border-color:#55789e}
+.contract-box{background:#050712;border-color:#253452}
+.contract-box span{color:#8fd8ff}
+.contract-box p{color:var(--muted)}
+.ticker{border-color:#21304b;background:#060914;color:var(--gold)}
+main{background:linear-gradient(180deg,#050713,#070916 36%,#050713)}
+.cards article,.roadmap div{border-color:var(--border);box-shadow:inset 0 1px rgba(255,255,255,.02)}
+.quote-card{background:linear-gradient(135deg,#d89216,#79350b);color:#fff8e8;box-shadow:0 22px 70px rgba(0,0,0,.22)}
+.meme-card{background:#090c19;border-color:var(--border)}
+.meme-badge{background:#050713;border-color:#38476b}
+.legal{border-color:#1d273b}
+footer{background:#02030a;border-color:#151d2e}
+
+/* A subtle electric-blue echo of the blockchain, without turning the site neon */
+.hero-copy,.cards article,.roadmap div,.meme-card{position:relative}
+.hero-copy::after{
+  content:"";
+  position:absolute;
+  pointer-events:none;
+  inset:auto 10% -1px 10%;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(69,190,255,.55),transparent);
+}
+
+@media(max-width:900px){
+  .hero{min-height:0}
+  .intro-video{object-position:center center}
+}
+@media(max-width:560px){
+  .intro-video{object-fit:cover;object-position:center center}
+  .skip-intro{right:12px;top:max(12px,env(safe-area-inset-top))}
+  .hero{background:radial-gradient(circle at 18% 17%,rgba(54,170,255,.2),transparent 27%),linear-gradient(180deg,#070a1a 0%,#0b1230 50%,#10192b 72%,#050713 100%)}
+  .hero-copy{background:linear-gradient(145deg,rgba(5,8,22,.93),rgba(9,14,31,.88))}
+}
+@media(prefers-reduced-motion:reduce){
+  .intro{transition:none}
+}
