@@ -6,11 +6,7 @@
 #roadmap .roadmap-subtitle{max-width:760px;margin:20px auto 38px;color:#9ea9bc;font:500 18px/1.6 Inter,sans-serif}
 .roadmap.visual-roadmap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;text-align:left}
 .roadmap-card{min-height:0!important;padding:0!important;overflow:hidden;border:1px solid rgba(21,171,233,.42)!important;border-radius:18px;background:linear-gradient(180deg,rgba(4,20,36,.96),rgba(3,14,27,.97))!important;display:flex!important;flex-direction:column!important;justify-content:flex-start!important;box-shadow:0 18px 42px rgba(0,0,0,.2),inset 0 1px rgba(255,255,255,.025)}
-.roadmap-shot{width:100%;aspect-ratio:220/174;background-image:url('assets/roadmap-sprite.webp?v=4');background-size:400% 100%;background-repeat:no-repeat;background-position-y:center;border-bottom:1px solid rgba(34,178,235,.22);filter:saturate(1.08) contrast(1.04);image-rendering:auto}
-.roadmap-card:nth-child(1) .roadmap-shot{background-position-x:0%}
-.roadmap-card:nth-child(2) .roadmap-shot{background-position-x:33.333%}
-.roadmap-card:nth-child(3) .roadmap-shot{background-position-x:66.666%}
-.roadmap-card:nth-child(4) .roadmap-shot{background-position-x:100%}
+.roadmap-shot{display:block;width:100%;aspect-ratio:220/174;object-fit:cover;object-position:center;background:#07142a;border:0;border-bottom:1px solid rgba(34,178,235,.22);filter:saturate(1.08) contrast(1.04);image-rendering:auto}
 .roadmap-body{padding:24px 26px 28px;display:flex;flex-direction:column;gap:8px;flex:1}
 .roadmap-body small{display:block;margin:0;color:#15bff7;font:800 14px/1 Inter,sans-serif;letter-spacing:.15em;text-transform:uppercase}
 .roadmap-body strong{display:block;margin:0 0 12px;color:#f5f6f8;font:800 30px/1.05 Oswald,Anton,sans-serif;text-transform:uppercase;letter-spacing:.01em}
