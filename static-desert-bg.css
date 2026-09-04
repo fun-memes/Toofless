@@ -1,4 +1,4 @@
-/* Static TOOFLESS night-desert world */
+/* Static TOOFLESS night-desert world — visible scenic background */
 html{background:#020612}
 body{position:relative;background:#020612;overflow-x:hidden}
 .site-world{
@@ -7,7 +7,7 @@ body{position:relative;background:#020612;overflow-x:hidden}
   z-index:0;
   pointer-events:none;
   background:
-    linear-gradient(180deg,rgba(2,6,18,.16),rgba(2,7,18,.40) 45%,rgba(1,4,12,.62)),
+    linear-gradient(180deg,rgba(2,6,18,.04),rgba(2,7,18,.12) 48%,rgba(1,4,12,.22)),
     url('assets/static-desert-wide.webp') center center/cover no-repeat;
   transform:translateZ(0);
 }
@@ -15,28 +15,35 @@ body{position:relative;background:#020612;overflow-x:hidden}
   content:"";
   position:absolute;
   inset:0;
-  background:
-    linear-gradient(90deg,rgba(2,5,15,.38),transparent 24%,transparent 72%,rgba(2,5,15,.30)),
-    linear-gradient(180deg,transparent 0 60%,rgba(2,4,10,.35));
+  background:linear-gradient(90deg,rgba(2,5,15,.10),transparent 20%,transparent 80%,rgba(2,5,15,.10));
 }
 body>header,body>main,body>footer{position:relative;z-index:2}
 main{background:transparent!important}
 .hero{background:transparent!important}
-.hero::before,.hero::after{opacity:.12!important}
+.hero::before,.hero::after{display:none!important}
 .desert-layer{display:none!important}
 .chain-river,.chain-block,.chain-caption,.moon-glow,.mesa,.dune,.cactus,.desert-grass{display:none!important}
-.section::before,.quote-section::before,.legal::before{
-  background:linear-gradient(145deg,rgba(3,8,20,.68),rgba(6,12,26,.50))!important;
-  border-color:rgba(43,154,214,.13)!important;
-  backdrop-filter:blur(5px);
-}
-.hero-copy,.cards article,.roadmap-card,.meme-card,.quote-card{backdrop-filter:blur(8px)}
+
+/* Let the actual desert + blockchain scenery show between content cards. */
+.section::before,.quote-section::before,.legal::before{display:none!important}
+.section,.quote-section,.legal{background:transparent!important}
+
+/* Keep individual content readable without covering the whole scene. */
+.hero-copy{background:linear-gradient(145deg,rgba(4,9,22,.86),rgba(6,13,30,.78))!important;backdrop-filter:blur(5px)}
+.cards article,.roadmap-card{background:rgba(7,13,29,.80)!important;backdrop-filter:blur(3px)}
+.meme-card{background:rgba(5,10,22,.82)!important;backdrop-filter:blur(4px)}
+.contract-box,.actions a{background:rgba(3,7,17,.82)!important}
+.ticker{background:rgba(3,7,17,.78)!important}
+footer{background:rgba(2,5,13,.84)!important}
+
 @media(max-width:700px){
   .site-world{
     background:
-      linear-gradient(180deg,rgba(2,6,18,.12),rgba(2,7,18,.32) 46%,rgba(1,4,12,.58)),
-      url('assets/static-desert-mobile.webp') center top/cover no-repeat;
+      linear-gradient(180deg,rgba(2,6,18,.02),rgba(2,7,18,.09) 50%,rgba(1,4,12,.18)),
+      url('assets/static-desert-mobile.webp') center center/cover no-repeat;
   }
-  .site-world::after{background:linear-gradient(180deg,rgba(2,4,12,.08),rgba(2,4,12,.18) 48%,rgba(2,4,12,.42))}
+  .site-world::after{background:linear-gradient(180deg,rgba(2,4,12,.02),transparent 50%,rgba(2,4,12,.12))}
+  .cards article,.roadmap-card{background:rgba(7,13,29,.76)!important}
+  .hero-copy{background:rgba(4,9,22,.80)!important}
 }
 @media(prefers-reduced-motion:reduce){.site-world{transform:none}}
