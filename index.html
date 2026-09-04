@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="style.css?v=5">
   <link rel="stylesheet" href="mobile-fix.css?v=2">
   <link rel="stylesheet" href="night-theme.css?v=1">
+  <link rel="stylesheet" href="mascot-3d.css?v=1">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
   <div id="intro" class="intro">
@@ -40,9 +42,11 @@
 
     <section class="hero-grid shell">
       <div class="mascot-area" id="mascotArea">
-        <img id="toofMascot" class="toof-mascot" src="toofless-dance.png" alt="TOOFLESS dancing">
+        <model-viewer id="toofMascot" class="toof-model" src="rigged-model.glb" alt="Animated 3D TOOFLESS mascot" camera-controls disable-zoom interaction-prompt="none" camera-orbit="0deg 75deg 110%" field-of-view="28deg" exposure="1.15" shadow-intensity="1.1" shadow-softness=".9" animation-crossfade-duration="250"></model-viewer>
+        <img class="toof-fallback" src="toofless-dance.png" alt="TOOFLESS mascot">
         <div class="mascot-shadow"></div>
         <div class="reaction" id="reaction">GIMME THAT TOOF!</div>
+        <div class="model-hint">DRAG TO LOOK • TAP TO JUMP</div>
       </div>
 
       <div class="hero-copy">
@@ -104,6 +108,6 @@
   </main>
 
   <footer><div class="shell footer-inner"><strong>TOOFLESS</strong><span>NO TEETH. NO UTILITY. JUST TOOF.</span><a href="https://x.com/Toof_On_Sol" target="_blank" rel="noreferrer">@Toof_On_Sol</a></div></footer>
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>
