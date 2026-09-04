@@ -10,14 +10,43 @@ let introFinished = false;
 function finishIntro() {
   if (introFinished) return;
   introFinished = true;
+
+  // Stop video decode immediately on skip/error/end before revealing the heavy page effects.
+  try { introVideo?.pause(); } catch (_) {}
   intro?.classList.add('transitioning');
   document.body.classList.add('cursor-active');
-  setTimeout(() => intro?.remove(), 900);
+
+  setTimeout(() => {
+    intro?.remove();
+    // Only start painting/animating the desert world after the intro overlay is gone.
+    document.body.classList.remove('intro-playing');
+  }, 850);
 }
 
 if (intro && introVideo) {
+  document.body.classList.add('intro-playing');
   introVideo.addEventListener('ended', finishIntro, { once: true });
   introVideo.addEventListener('error', finishIntro, { once: true });
+
+  // If playback stalls for a long time, keep the skip button usable rather than
+  // letting the page sit behind a frozen frame indefinitely.
+  let stallTimer = null;
+  const clearStallTimer = () => {
+    if (stallTimer) clearTimeout(stallTimer);
+    stallTimer = null;
+  };
+  introVideo.addEventListener('waiting', () => {
+    clearStallTimer();
+    stallTimer = setTimeout(() => {
+      skip?.classList.add('show-stall-hint');
+    }, 1800);
+  });
+  introVideo.addEventListener('playing', () => {
+    clearStallTimer();
+    skip?.classList.remove('show-stall-hint');
+  });
+  introVideo.addEventListener('canplay', clearStallTimer);
+
   const playPromise = introVideo.play();
   if (playPromise?.catch) playPromise.catch(() => {});
 }
