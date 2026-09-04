@@ -1,54 +1,144 @@
-/* Static TOOFLESS night-desert world — scrolling full-page background */
-html{background:#020612}
-body{position:relative;background:#020612!important;overflow-x:hidden}
+/* TOOFLESS seamless desert world — visible behind the whole landing page */
+html{
+  min-height:100%;
+  background:#020612;
+}
+
+body{
+  position:relative;
+  min-height:100vh;
+  margin:0;
+  overflow-x:hidden;
+  background:
+    linear-gradient(180deg,rgba(2,6,18,.18) 0%,rgba(2,7,18,.28) 44%,rgba(1,4,12,.48) 100%),
+    url('assets/static-desert-wide.webp') center top / cover fixed no-repeat!important;
+}
+
+/* Dedicated world layer sits above the body paint but below all content. */
 .site-world{
-  position:absolute!important;
-  top:0!important;
-  left:0!important;
-  right:0!important;
-  bottom:0!important;
-  width:100%!important;
-  min-height:100%!important;
+  position:fixed!important;
+  inset:0!important;
+  width:100vw!important;
+  height:100vh!important;
   z-index:0!important;
   pointer-events:none!important;
   overflow:hidden!important;
-  background-image:
-    linear-gradient(180deg,rgba(2,6,18,.04),rgba(2,7,18,.10) 45%,rgba(1,4,12,.18)),
-    url('assets/static-desert-wide.webp')!important;
-  background-position:center top,center top!important;
-  background-size:100% auto,100% auto!important;
-  background-repeat:repeat-y,repeat-y!important;
-  background-attachment:scroll,scroll!important;
+  background:
+    radial-gradient(circle at 52% 26%,rgba(0,185,255,.14),transparent 34%),
+    linear-gradient(180deg,rgba(2,6,18,.06),rgba(2,7,18,.15) 48%,rgba(1,4,12,.30)),
+    url('assets/static-desert-wide.webp') center top / cover no-repeat!important;
+  opacity:1!important;
 }
+
+.site-world::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at 50% 42%,rgba(0,205,255,.12),transparent 38%),
+    linear-gradient(90deg,rgba(2,5,15,.08),transparent 16%,transparent 84%,rgba(2,5,15,.08));
+}
+
 .site-world::after{
   content:"";
   position:absolute;
   inset:0;
   pointer-events:none;
-  background:linear-gradient(90deg,rgba(2,5,15,.18),transparent 20%,transparent 80%,rgba(2,5,15,.16));
+  background:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.04) 62%,rgba(0,0,0,.18) 100%);
 }
-body>header,body>main,body>footer{position:relative!important;z-index:2!important}
-main,.hero,footer{background:transparent!important}
-.hero::before,.hero::after{display:none!important}
+
+body>header,
+body>main,
+body>footer{
+  position:relative!important;
+  z-index:2!important;
+}
+
+main,
+.hero,
+footer,
+.section,
+.quote-section,
+.legal{
+  background:transparent!important;
+}
+
+.hero::before,
+.hero::after,
+.section::before,
+.quote-section::before,
+.legal::before{
+  display:none!important;
+}
+
 .desert-layer{display:none!important}
 .chain-river,.chain-block,.chain-caption,.moon-glow,.mesa,.dune,.cactus,.desert-grass{display:none!important}
-.section::before,.quote-section::before,.legal::before{display:none!important}
-.hero-copy,.cards article,.roadmap-card,.meme-card,.quote-card{backdrop-filter:blur(7px)}
-.cards article,.roadmap-card{background:rgba(8,13,27,.88)!important}
-.meme-card{background:rgba(7,12,24,.86)!important}
-.hero-copy{background:rgba(5,10,22,.82)!important}
-.ticker{background:rgba(3,7,17,.88)!important}
-footer{background:rgba(2,5,13,.88)!important}
+
+/* Let the world show through the cards instead of turning the page black. */
+.hero-copy,
+.cards article,
+.roadmap-card,
+.meme-card,
+.quote-card{
+  backdrop-filter:blur(7px);
+  -webkit-backdrop-filter:blur(7px);
+}
+
+.cards article,
+.roadmap-card{
+  background:rgba(8,13,27,.76)!important;
+}
+
+.meme-card{
+  background:rgba(7,12,24,.72)!important;
+}
+
+.hero-copy{
+  background:rgba(5,10,22,.66)!important;
+}
+
+.quote-card{
+  background:rgba(7,12,24,.68)!important;
+}
+
+.ticker{
+  background:rgba(3,7,17,.72)!important;
+}
+
+footer{
+  background:linear-gradient(180deg,rgba(2,5,13,.52),rgba(2,5,13,.82))!important;
+}
+
+/* Keep the lower page atmospheric instead of collapsing to flat black. */
+.legal{
+  background:linear-gradient(180deg,rgba(2,6,16,.10),rgba(2,5,13,.38))!important;
+}
+
 @media(max-width:700px){
-  .site-world{
-    background-image:
-      linear-gradient(180deg,rgba(2,6,18,.02),rgba(2,7,18,.06) 45%,rgba(1,4,12,.12)),
-      url('assets/static-desert-mobile.webp')!important;
-    background-position:center top,center top!important;
-    background-size:100% auto,100% auto!important;
-    background-repeat:repeat-y,repeat-y!important;
+  body{
+    background:
+      linear-gradient(180deg,rgba(2,6,18,.12) 0%,rgba(2,7,18,.22) 46%,rgba(1,4,12,.42) 100%),
+      url('assets/static-desert-mobile.webp') center top / cover fixed no-repeat!important;
   }
-  .site-world::after{background:linear-gradient(90deg,rgba(2,5,15,.10),transparent 18%,transparent 82%,rgba(2,5,15,.10))}
-  .cards article,.roadmap-card{background:rgba(8,13,27,.86)!important}
-  .hero-copy{background:rgba(5,10,22,.80)!important}
+
+  .site-world{
+    background:
+      radial-gradient(circle at 52% 24%,rgba(0,185,255,.16),transparent 35%),
+      linear-gradient(180deg,rgba(2,6,18,.03),rgba(2,7,18,.10) 48%,rgba(1,4,12,.24)),
+      url('assets/static-desert-mobile.webp') center top / cover no-repeat!important;
+  }
+
+  .cards article,
+  .roadmap-card{
+    background:rgba(8,13,27,.72)!important;
+  }
+
+  .hero-copy{
+    background:rgba(5,10,22,.62)!important;
+  }
+
+  .meme-card{
+    background:rgba(7,12,24,.68)!important;
+  }
 }
