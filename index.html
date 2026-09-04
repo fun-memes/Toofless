@@ -14,10 +14,36 @@
   <link rel="stylesheet" href="night-theme.css?v=1">
   <link rel="stylesheet" href="mascot-3d.css?v=1">
   <link rel="stylesheet" href="lore-frames.css?v=1">
-  <link rel="stylesheet" href="roadmap-frames.css?v=1">
+  <link rel="stylesheet" href="roadmap-frames.css?v=2">
+  <link rel="stylesheet" href="desert-world.css?v=1">
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
+  <div class="site-world" aria-hidden="true">
+    <div class="moon-glow"></div>
+    <div class="mesa one"></div><div class="mesa two"></div><div class="mesa three"></div>
+    <div class="dune d1"></div><div class="dune d2"></div><div class="dune d3"></div>
+    <div class="cactus c1"></div><div class="cactus c2"></div><div class="cactus c3"></div><div class="cactus c4"></div>
+    <div class="desert-grass g1"></div><div class="desert-grass g2"></div><div class="desert-grass g3"></div>
+    <svg class="chain-river" viewBox="0 0 1000 5000" preserveAspectRatio="none" aria-hidden="true">
+      <defs><linearGradient id="chainGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#50d7ff"/><stop offset=".5" stop-color="#148cff"/><stop offset="1" stop-color="#65e5ff"/></linearGradient></defs>
+      <path class="glow" d="M95 540 C840 770 150 1120 830 1450 S180 2150 820 2520 S150 3200 820 3560 S160 4240 875 4670"/>
+      <path class="core" d="M95 540 C840 770 150 1120 830 1450 S180 2150 820 2520 S150 3200 820 3560 S160 4240 875 4670"/>
+      <path class="inner" d="M95 540 C840 770 150 1120 830 1450 S180 2150 820 2520 S150 3200 820 3560 S160 4240 875 4670"/>
+    </svg>
+    <div class="chain-block toof b1"></div>
+    <div class="chain-block tooth b2">🦷</div>
+    <div class="chain-block token b3">$TOOF</div>
+    <div class="chain-block hat b4">🤠</div>
+    <div class="chain-block toof b5"></div>
+    <div class="chain-block token b6">$TOOF</div>
+    <div class="chain-block tooth b7">🦷</div>
+    <div class="chain-block toof b8"></div>
+    <div class="chain-block hat b9">🤠</div>
+    <div class="chain-block token b10">$TOOF</div>
+    <div class="chain-caption">TOOFCHAIN // DO NOT BITE</div>
+  </div>
+
   <div id="intro" class="intro">
     <video id="introVideo" class="intro-video" autoplay muted playsinline preload="auto">
       <source src="toofless-intro-full.mp4" type="video/mp4">
@@ -78,19 +104,19 @@
       <h2>TOOF tried to bite the blockchain.</h2>
       <div class="cards lore-cards">
         <article>
-          <img class="lore-frame" src="assets/lore-01.webp" alt="TOOFLESS spots the glowing blockchain" loading="lazy">
+          <img class="lore-frame" src="assets/lore-01.webp?v=3" alt="TOOFLESS spots the glowing blockchain" loading="lazy">
           <div class="lore-card-body"><b>01</b><h3>SAW THE CHAIN</h3><p>Bright. Shiny. Decentralized. Completely inedible.</p></div>
         </article>
         <article>
-          <img class="lore-frame" src="assets/lore-02.webp" alt="TOOFLESS bites the glowing blockchain" loading="lazy">
+          <img class="lore-frame" src="assets/lore-02.webp?v=2" alt="TOOFLESS bites the glowing blockchain" loading="lazy">
           <div class="lore-card-body"><b>02</b><h3>BIT IT ANYWAY</h3><p>The blockchain stayed intact. TOOF did not.</p></div>
         </article>
         <article>
-          <img class="lore-frame" src="assets/lore-03.webp" alt="TOOFLESS loses a tooth while biting the blockchain" loading="lazy">
+          <img class="lore-frame" src="assets/lore-03.webp?v=2" alt="TOOFLESS loses a tooth while biting the blockchain" loading="lazy">
           <div class="lore-card-body"><b>03</b><h3>LOST A TOOTH</h3><p>He stared at it for three seconds and called the event bullish.</p></div>
         </article>
         <article>
-          <img class="lore-frame" src="assets/lore-04.webp" alt="TOOFLESS gives a thumbs up after losing his tooth" loading="lazy">
+          <img class="lore-frame" src="assets/lore-04.webp?v=3" alt="TOOFLESS gives a thumbs up after losing his tooth" loading="lazy">
           <div class="lore-card-body"><b>04</b><h3>$TOOF WAS BORN</h3><p>No teeth. No utility. An unreasonable amount of confidence.</p></div>
         </article>
       </div>
