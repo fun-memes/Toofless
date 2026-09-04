@@ -140,3 +140,19 @@ window.addEventListener('touchend', () => {
   touchTooth = null;
   if (toothCursor && matchMedia('(pointer:coarse)').matches) toothCursor.style.display = 'none';
 }, { passive: true });
+
+// Lore card 04: the previous repository blob was not a valid WebP.
+// Load the verified 3D artwork from a text-safe base64 payload instead.
+(async () => {
+  const lore04 = document.querySelector('img[src*="lore-04-3d.webp"]');
+  if (!lore04) return;
+  try {
+    const response = await fetch('assets/lore-04-3d.b64?v=1', { cache: 'no-store' });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const payload = (await response.text()).trim();
+    if (!payload.startsWith('UklG')) throw new Error('Invalid WebP payload');
+    lore04.src = `data:image/webp;base64,${payload}`;
+  } catch (error) {
+    console.error('TOOF lore 04 image failed to load', error);
+  }
+})();
