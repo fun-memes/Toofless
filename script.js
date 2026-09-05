@@ -132,18 +132,3 @@ window.addEventListener('touchend', () => {
   touchTooth = null;
   if (toothCursor && matchMedia('(pointer:coarse)').matches) toothCursor.style.display = 'none';
 }, { passive: true });
-
-// Lore card 04 uses a verified text-safe WebP payload. The placeholder avoids a broken-image flash.
-(async () => {
-  const lore04 = document.querySelector('img[data-lore04]');
-  if (!lore04) return;
-  try {
-    const response = await fetch(lore04.dataset.lore04, { cache: 'no-store' });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const payload = (await response.text()).replace(/\s+/g, '');
-    if (!payload.startsWith('UklG')) throw new Error('Invalid WebP payload');
-    lore04.src = `data:image/webp;base64,${payload}`;
-  } catch (error) {
-    console.error('TOOF lore 04 image failed to load', error);
-  }
-})();
