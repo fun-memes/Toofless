@@ -147,6 +147,35 @@ footer{background:#02030a;border-color:#151d2e}
   .skip-intro{right:12px;top:max(12px,env(safe-area-inset-top));background:rgba(3,5,15,.82)}
   .hero{background:radial-gradient(circle at 18% 17%,rgba(54,170,255,.2),transparent 27%),linear-gradient(180deg,#070a1a 0%,#0b1230 50%,#10192b 72%,#050713 100%)}
   .hero-copy{background:linear-gradient(145deg,rgba(5,8,22,.93),rgba(9,14,31,.88))}
+
+  /* Consolidated from the former mobile-fix.css. */
+  .hero-copy h1{
+    font-family:Oswald,Arial Narrow,sans-serif;
+    font-size:42px;
+    font-weight:600;
+    line-height:1.02;
+    letter-spacing:.005em;
+  }
+  .hero-copy h1 span{
+    display:block;
+    margin-top:4px;
+    font-size:46px;
+    font-weight:700;
+    line-height:1;
+  }
+  .tagline{
+    font-family:Oswald,Arial Narrow,sans-serif;
+    font-size:22px;
+    font-weight:600;
+    line-height:1.1;
+  }
+  .section h2{
+    font-family:Oswald,Arial Narrow,sans-serif;
+    font-size:34px;
+    font-weight:600;
+    line-height:1.08;
+    letter-spacing:0;
+  }
 }
 @media(max-width:560px) and (orientation:landscape){
   .intro-video{object-fit:cover}
